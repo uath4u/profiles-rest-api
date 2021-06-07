@@ -10,6 +10,4 @@ class UpdateOwnProfile(permissions.BasePermission):
         if request.method in permissions.SAFE_METHODS:
             return True
 
-        print(f'ObjectID{obj.id} RequestUserID{request.user.id}')
-
-        return Response(f'ObjectID{obj.id} RequestUserID{request.user.id}') #obj.id == request.user.id
+        return obj.id == request.user.id
